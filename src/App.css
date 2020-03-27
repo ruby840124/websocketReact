@@ -1,38 +1,205 @@
-.App {
-  text-align: center;
+html, body {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  background: #f0f0f0;
+  font-family: "Microsoft JhengHei", "Comic Sans MS", arial, helvetica, sans-serif;
+  height: 100%;
+  width: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.status-box{
+  font-size: 12px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.image-upload > input
+{
+  display: none;
+}
+
+
+@media (max-width:700px){
+  .container {
+      width: 100%;
+      height: 70vh;
+      background-color: #a6bec0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+  }
+
+  .msgContainer{
+      width: 100%;
+      height: calc(100% - 70vh - 30px);
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+  
+  }
+
+  .content {
+      margin-bottom: 10px;
+      width: 45vh;
+      height: 40vh;
+      border: 2px solid gray;
+      border-radius: 5px;
+      overflow: auto;
+      background-color:white;
+  }
+
+  input[name="msg"] {
+      width: 45vh;
+      height: 15vh;
+      border-radius: 5px;
+  }
+
+  .name{
+      font-size: 11px;
+      margin-right: 10px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@media screen and (min-width:700px) and (max-width:5000px){
+  .container {
+      width: 100%;
+      height: 75vh;
+      background-color: #a6bec0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+  }
+
+  .msgContainer{
+      width: 100%;
+      height: calc(100% - 75vh - 30px);
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+  
+  }
+
+  .content {
+      margin-bottom: 10px;
+      width: 180vh;
+      height: 50vh;
+      border: 2px solid gray;
+      border-radius: 5px;
+      overflow: auto;
+      background-color:white;
+  }
+
+  input[name="msg"] {
+      width: 180vh;
+      height: 15vh;
+      border-radius: 5px;
+  }
+
+  .name{
+      margin-right: 10px;
+  }
+}
+
+
+.ChatTitle{
+  font-Size: 20px; 
+  font-family: monospace;
+  color:white;
+}
+
+.logo{
+  margin: 5px 0;
+  width: 10vh;
+  height: 10vh;
+}  
+
+.submitBlock{
+  padding: 0 5px 0 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
 }
 
-.App-link {
-  color: #61dafb;
+.send-box input.error {
+  border: 1px solid red;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+._button{
+  border:0;
+  text-align: center;
+  background-color:#41a6f0;
+  color:#fff;
+  border-radius:5px;
+  height:25px;
+  width:110px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left:10px;
+  white-space:nowrap;
+}
+
+.upload-btn-wrapper{
+  position: relative;
+  display:inline;
+}
+
+.upload-btn-wrapper input[type=file] {
+  position: absolute;
+  left: 12px;
+  top: 0;
+  height:25px;
+  width:100px;
+  opacity: 0;
+}
+
+.uploadImage {
+  display:block;
+  padding: 10px 0 0 0;
+  width: 10vh;
+  margin:auto;
+}
+
+.chatlist{
+  margin: 8px;
+}
+
+
+.headShot{
+  float:left;
+  width:4.5vh;
+  height:4.5vh;
+  border-radius:50%;
+  margin: 0 5px 0 0;
+}
+
+.nameBlock{
+  text-align: center;
+  background-color: rgb(241, 248, 255);
+  margin: 10px 0px 10px;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+
+.chatlist .chatin span{
+  display: inline-block;
+  position:relative;
+  padding:5px 8px;
+  max-width: calc(100% - 90px);
+  min-height: 30px;
+  line-height:20px;
+  font-size: 12px;
+  word-break: break-all;
+  border-radius: 4px;
+  text-align: left;
+  background-color: #b8dbfb;
+}
+
+.chatlist .chatin span:before{
+  content: " ";
+  position: absolute;
+  top: 9px;
+  right: 100%;
+  border: 6px solid transparent;
+  border-right-color: #b8dbfb;
 }
